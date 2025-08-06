@@ -1,4 +1,4 @@
-# 💾 Database
+# 📖 Database
 - **Bespin Global Cloud Engineer**
 - **MySQL 기반으로 실습한 내용**
 ## Practice
