@@ -10,6 +10,10 @@ CREATE TABLE BTC_3
 );
 ```
 ```sql
+alter table member modify column mem_id
+char(8) not null COMMENT '사용자 아이디';
+```
+```sql
 create table member_1
 ( mem_id CHAR(8) not null comment '사용자 아이디' primary key
 , mem_name VARCHAR(10) not null comment '사용자 이름'
