@@ -71,3 +71,12 @@ REFERENCES EMPLOYEES (emp_no);
 ALTER TABLE dept_manager
 DROP FOREIGN KEY dept_manager_ibfk_2;
 ```
+### BULK 로딩
+    
+```sql
+# 환경 변수 편집 X
+"C:\Program Files\MySQL\MySQL Server 8.0\bin\mysql" -uroot -p aaa < [파일 위치]
+  
+# 환경 변수 편집 O
+mysql -u root -p [데이터베이스] < "[파일 위치]"
+```
