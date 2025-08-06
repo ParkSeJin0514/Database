@@ -53,6 +53,9 @@ CREATE TABLE dept_emp
 dept_no CHAR comment '부서번호',
 from_date DATE NOT NULL comment '발령일시',
 PRIMARY KEY (emp_no, dept_no),
+
+# 현재 테이블의 emp_no 컬럼을 외래 키로 지정
+# 외래 키가 참조하는 대상은 employees 테이블의 emp_no 컬럼
 FOREIGN KEY (emp_no) REFERENCES employees(emp_no),
 FOREIGN KEY (dept_no) REFERENCES departments(dept_no));
 ```
