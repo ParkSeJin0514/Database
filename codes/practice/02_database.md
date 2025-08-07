@@ -77,3 +77,41 @@ ELSE ''
 END AS '부서명'
 FROM dept_emp
 ```
+## 🚀 GROUP
+### GROUP BY
+```sql
+SELECT CASE WHEN GENDER = 'M' THEN '남자'
+WHEN gender = 'F' THEN '여자'
+END AS 성별,
+count(*) AS '직원 수'
+FROM employees
+GROUP BY gender
+```
+### HAVIG
+```sql
+select hire_date 입사일, gender, count(*) 사원수
+from employees
+group by hire_date, gender
+having count(*) >= 50
+```
+## 🚀 ORDER BY
+### ASC
+```sql
+SELECT emp_no AS '사원번호', salary AS '급여'
+FROM salaries
+GROUP BY emp_no, salary
+ORDER BY salary DESC, emp_no ASC
+```
+### DESC
+```sql
+SELECT emp_no AS '사원번호', salary AS '급여', salary * 12 AS '연봉'
+FROM salaries
+ORDER BY 연봉 DESC
+```
+## 🚀 JOIN
+### INNER JOIN
+```sql
+SELECT *
+FROM player a INNER JOIN team b
+ON a.team_id = b.team_id
+```
