@@ -1,4 +1,5 @@
 # 📖 08.06 Database
+## 🚀 기본 명령어
 ### 테이블 생성
 ```sql
 CREATE TABLE BTC_3
