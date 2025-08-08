@@ -108,10 +108,3 @@ SELECT emp_no AS '사원번호', salary AS '급여', salary * 12 AS '연봉'
 FROM salaries
 ORDER BY 연봉 DESC
 ```
-## 🚀 JOIN
-### INNER JOIN
-```sql
-SELECT *
-FROM player a INNER JOIN team b
-ON a.team_id = b.team_id
-```
