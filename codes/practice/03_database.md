@@ -47,28 +47,35 @@ AND E.FIRST_NAME = 'SHIRISH';
 ## 🔥 TEST
 ### 1999년 입사한 사원 출력
 ```sql
-SELECT * FROM employees
+SELECT *
+FROM employees
 WHERE HIRE_DATE BETWEEN '1999-01-01' AND '1999-12-31'
 ```
 ### 1998년에 입사한 남자 출력
 ```sql
-SELECT * FROM employees
+SELECT gender, count(*)
+FROM employees
 WHERE HIRE_DATE BETWEEN '1998-01-01' AND '1998-12-31'
-AND gender = 'M'
+GROUP BY gender
+HAVING gender = 'M'
 ```
 ### 업무별 직원수 출력
 ```sql
-SELECT dept_no, COUNT(*) FROM DEPT_EMP DE 
-GROUP BY dept_no
+SELECT d.dept_name, de.dept_no, COUNT(*) 
+FROM DEPT_EMP DE, DEPARTMENTS D
+WHERE D.DEPT_NO = DE.DEPT_NO
+GROUP BY d.dept_name, de.dept_no
 ```
 ### 남여 직원수 출력
 ```sql
-SELECT gender, count(*) FROM employees
+SELECT gender, count(*)
+FROM employees
 GROUP BY gender
 ```
 ### 개발부에서 급여를 가장 많이 받는 직원 5명 출력
 ```sql
-SELECT E.EMP_NO, D.DEPT_NO, S.SALARY FROM EMPLOYEES E, DEPARTMENTS D, DEPT_EMP DE, SALARIES S
+SELECT E.EMP_NO, D.DEPT_NO, S.SALARY
+FROM EMPLOYEES E, DEPARTMENTS D, DEPT_EMP DE, SALARIES S
 WHERE E.EMP_NO = DE.EMP_NO
 AND D.DEPT_NO = DE.DEPT_NO
 AND S.EMP_NO = E.EMP_NO 
