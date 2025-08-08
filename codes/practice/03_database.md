@@ -59,14 +59,14 @@ WHERE HIRE_DATE BETWEEN '1998-01-01' AND '1998-12-31'
 GROUP BY gender
 HAVING gender = 'M'
 ```
-### 업무별 직원수 출력
+### 업무별 직원 수 출력
 ```sql
 SELECT d.dept_name, de.dept_no, COUNT(*) 
 FROM DEPT_EMP DE, DEPARTMENTS D
 WHERE D.DEPT_NO = DE.DEPT_NO
 GROUP BY d.dept_name, de.dept_no
 ```
-### 남여 직원수 출력
+### 남여 직원 수 출력
 ```sql
 SELECT gender, count(*)
 FROM employees
@@ -83,7 +83,7 @@ AND D.dept_no = 'd005'
 ORDER BY S.SALARY DESC
 LIMIT 5
 ```
-### 남여 직원수를 구하고 M은 '남', F는 '여'로 출력
+### 남여 직원 수를 구하고 'M'은 '남', 'F'는 '여'로 출력
 ```sql
 SELECT
 CASE WHEN gender = 'M' THEN '남'
