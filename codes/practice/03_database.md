@@ -1,4 +1,4 @@
-# 📖 08.06 Database
+# 🗄️ 08.06 Database
 ## 🚀 JOIN
 ### INNER JOIN
 ```sql
